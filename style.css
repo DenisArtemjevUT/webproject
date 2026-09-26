@@ -1,0 +1,131 @@
+/* ===== ВСЯ СТРАНИЦА: базовый стиль для всего сайта ===== */
+body {
+    margin: 0;                                  /* убирает белую рамку браузера вокруг страницы */
+    background-color: black;
+    color: white;                               /* цвет текста наследуют все элементы внутри */
+    font-family: Helvetica, Arial, sans-serif;  /* если нет первого шрифта, берётся следующий */
+    font-size: 12px;
+    text-transform: uppercase;                  /* весь текст ЗАГЛАВНЫМИ, HTML не меняется */
+    letter-spacing: 1px;                        /* расстояние между буквами */
+}
+
+/* ===== ФОН СТРАНИЦЫ ЛОГИНА: класс на <body>, чтобы фон был только на login.html ===== */
+.login-page {
+    background-image: url("images/west.png");   /* путь относительно HTML-файла */
+    background-size: cover;                     /* фото на весь экран без искажений, лишнее обрезается */
+    background-position: center bottom;         /* при обрезке держим фото по центру и прижатым к низу */
+    min-height: 100vh;                          /* высота минимум во всё окно (vh = высота окна) */
+    display: flex;
+    flex-direction: column;                     /* header, main, footer идут столбиком — нужно для flex: 1 у main */
+}
+
+/* ===== ВСЕ ССЫЛКИ: убираем стандартный синий цвет и подчёркивание ===== */
+a {
+    color: white;
+    text-decoration: none;
+}
+
+/* ===== АВАТАР: круглая иконка профиля в шапке (CHILD SELECTOR >) ===== */
+header > img {                                  /* только img, который прямой ребёнок header */
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;                         
+    object-fit: cover;                        
+}
+
+/* ===== ШАПКА: меню слева, аватар справа (FLEXBOX) ===== */
+header {
+    display: flex;                            
+    justify-content: space-between;           
+    align-items: center;                        
+    padding: 16px 24px;                         
+}
+
+/* ===== ССЫЛКИ МЕНЮ: отступы вокруг Home и Add Post (DESCENDANT SELECTOR) ===== */
+nav a {                                         /* все ссылки где угодно внутри nav */
+    padding: 8px 12px;                          /* область вокруг текста, которая подсвечивается при наведении */
+}
+
+/* ===== НАВЕДЕНИЕ НА МЕНЮ: смена фона, требование задания (PSEUDO-CLASS :hover) ===== */
+nav a:hover {                                   /* срабатывает, пока курсор над ссылкой */
+    background-color: white;
+    color: black;                               
+}
+
+/* ===== ОСНОВНАЯ ЧАСТЬ: форма по центру, подвал уходит вниз ===== */
+main {
+    display: flex;
+    justify-content: center;                    /* форма по центру по горизонтали */
+    padding: 40px 16px;                         
+    flex: 1;                                    
+}
+
+/* ===== ФОРМА: все элементы столбиком по центру ===== */
+form {
+    display: flex;
+    flex-direction: column;                     
+    align-items: center;
+    gap: 12px;                                  
+    width: 280px;                               
+}
+
+
+form h1 {
+    font-size: 16px;
+    margin: 0 0 12px 0;                       
+}
+
+
+form p {
+    margin: 0;                                  
+}
+
+h1 ~ a:hover {                                
+    text-decoration: underline;
+}
+
+/* ===== ПОЛЯ ВВОДА: прозрачные, только линия снизу ===== */
+input {
+    width: 100%;                                
+    padding: 8px 0;
+    background: transparent;                  
+    border: none;                               
+    border-bottom: 1px solid white;             
+    color: white;
+    font: inherit;                             
+    letter-spacing: inherit;
+}
+
+/* ===== АКТИВНОЕ ПОЛЕ: когда пользователь печатает ===== */
+input:focus {
+    outline: none;                              
+    border-bottom-color: gray;                  
+}
+
+/* ===== КНОПКА LOG IN: белая ===== */
+button {
+    width: 100%;
+    padding: 12px;                            
+    background-color: white;
+    color: black;
+    border: none;
+    font: inherit;                              
+    letter-spacing: inherit;
+    text-transform: uppercase;                  
+    cursor: pointer;                            
+}
+
+/* ===== НАВЕДЕНИЕ НА КНОПКУ ===== */
+button:hover {
+    background-color: gray;
+}
+
+/* ===== ОТСТУП ПЕРЕД КНОПКОЙ) ===== */
+input + button {                               
+    margin-top: 12px;                           
+}
+
+/* ===== ПОДВАЛ: нижняя часть страницы ===== */
+footer {
+    padding: 16px 36px;                        
+}
