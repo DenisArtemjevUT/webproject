@@ -7,6 +7,9 @@ body {
     font-size: 12px;
     text-transform: uppercase;                  /* display only, HTML unchanged */
     letter-spacing: 1px;
+    min-height: 100vh;                          /* at least full window height */
+    display: flex;
+    flex-direction: column;                     /* stack header/main/footer */
 }
 
 /* ===== Login page background (class on <body>) ===== */
@@ -14,9 +17,6 @@ body {
     background-image: url("images/west.png");   /* path relative to HTML file */
     background-size: cover;                     /* fill screen, keep ratio */
     background-position: center bottom;
-    min-height: 100vh;                          /* at least full window height */
-    display: flex;
-    flex-direction: column;                     /* stack header/main/footer */
 }
 
 /* ===== Links: remove default blue and underline ===== */
@@ -129,4 +129,48 @@ input + button {
 /* ===== Footer ===== */
 footer {
     padding: 16px 36px;
+    text-align: center;
+}
+
+/* ===== addPost: textarea (same look as inputs) ===== */
+textarea {
+    width: 100%;
+    box-sizing: border-box;                     /* padding inside width */
+    padding: 8px;
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+    font: inherit;                              /* override browser font */
+    letter-spacing: inherit;
+    resize: vertical;                           /* only vertical resizing */
+    text-transform: inherit;                    /* override browser default */
+}
+
+/* ===== Placeholder text (PSEUDO-ELEMENT) ===== */
+textarea::placeholder {
+    color: gray;
+}
+
+/* ===== Active textarea ===== */
+textarea:focus {
+    outline: none;
+    border-color: gray;
+}
+
+/* ===== File input: remove underline from input rule ===== */
+input[type="file"] {
+    border-bottom: none;
+}
+
+/* ===== "Choose File" button (PSEUDO-ELEMENT) ===== */
+input[type="file"]::file-selector-button {
+    background: white;
+    color: black;
+    border: none;
+    padding: 8px 12px;
+    margin-right: 12px;
+    font: inherit;
+    text-transform: uppercase;
+    cursor: pointer;
+    letter-spacing: inherit;
 }
