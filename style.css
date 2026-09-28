@@ -1,131 +1,176 @@
-/* ===== ВСЯ СТРАНИЦА: базовый стиль для всего сайта ===== */
+/* ===== Base ===== */
 body {
-    margin: 0;                                  /* убирает белую рамку браузера вокруг страницы */
+    margin: 0;                                  /* remove default page margin */
     background-color: black;
-    color: white;                               /* цвет текста наследуют все элементы внутри */
-    font-family: Helvetica, Arial, sans-serif;  /* если нет первого шрифта, берётся следующий */
+    color: white;                               /* inherited by all children */
+    font-family: Helvetica, Arial, sans-serif;  /* fallback fonts */
     font-size: 12px;
-    text-transform: uppercase;                  /* весь текст ЗАГЛАВНЫМИ, HTML не меняется */
-    letter-spacing: 1px;                        /* расстояние между буквами */
-}
-
-/* ===== ФОН СТРАНИЦЫ ЛОГИНА: класс на <body>, чтобы фон был только на login.html ===== */
-.login-page {
-    background-image: url("images/west.png");   /* путь относительно HTML-файла */
-    background-size: cover;                     /* фото на весь экран без искажений, лишнее обрезается */
-    background-position: center bottom;         /* при обрезке держим фото по центру и прижатым к низу */
-    min-height: 100vh;                          /* высота минимум во всё окно (vh = высота окна) */
+    text-transform: uppercase;                  /* display only, HTML unchanged */
+    letter-spacing: 1px;
+    min-height: 100vh;                          /* at least full window height */
     display: flex;
-    flex-direction: column;                     /* header, main, footer идут столбиком — нужно для flex: 1 у main */
+    flex-direction: column;                     /* stack header/main/footer */
 }
 
-/* ===== ВСЕ ССЫЛКИ: убираем стандартный синий цвет и подчёркивание ===== */
+/* ===== Login page background (class on <body>) ===== */
+.login-page {
+    background-image: url("images/west.png");   /* path relative to HTML file */
+    background-size: cover;                     /* fill screen, keep ratio */
+    background-position: center bottom;
+}
+
+/* ===== Links: remove default blue and underline ===== */
 a {
     color: white;
     text-decoration: none;
 }
 
-/* ===== АВАТАР: круглая иконка профиля в шапке (CHILD SELECTOR >) ===== */
-header > img {                                  /* только img, который прямой ребёнок header */
+/* ===== Avatar (CHILD SELECTOR) ===== */
+header > img {                                  /* direct child of header only */
     width: 40px;
     height: 40px;
-    border-radius: 50%;                         
-    object-fit: cover;                        
+    border-radius: 50%;                         /* circle */
+    object-fit: cover;                          /* crop, no stretching */
 }
 
-/* ===== ШАПКА: меню слева, аватар справа (FLEXBOX) ===== */
+/* ===== Header: nav left, avatar right (FLEXBOX) ===== */
 header {
-    display: flex;                            
-    justify-content: space-between;           
-    align-items: center;                        
-    padding: 16px 24px;                         
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 24px;
 }
 
-/* ===== ССЫЛКИ МЕНЮ: отступы вокруг Home и Add Post (DESCENDANT SELECTOR) ===== */
-nav a {                                         /* все ссылки где угодно внутри nav */
-    padding: 8px 12px;                          /* область вокруг текста, которая подсвечивается при наведении */
+/* ===== Nav links (DESCENDANT SELECTOR) ===== */
+nav a {                                         /* any link inside nav */
+    padding: 8px 12px;                          /* hover highlight area */
 }
 
-/* ===== НАВЕДЕНИЕ НА МЕНЮ: смена фона, требование задания (PSEUDO-CLASS :hover) ===== */
-nav a:hover {                                   /* срабатывает, пока курсор над ссылкой */
+/* ===== Nav hover (PSEUDO-CLASS) ===== */
+nav a:hover {
     background-color: white;
-    color: black;                               
+    color: black;
 }
 
-/* ===== ОСНОВНАЯ ЧАСТЬ: форма по центру, подвал уходит вниз ===== */
+/* ===== Main: centered content, pushes footer down ===== */
 main {
     display: flex;
-    justify-content: center;                    /* форма по центру по горизонтали */
-    padding: 40px 16px;                         
-    flex: 1;                                    
+    justify-content: center;
+    padding: 40px 16px;
+    flex: 1;                                    /* take remaining height */
 }
 
-/* ===== ФОРМА: все элементы столбиком по центру ===== */
+/* ===== Form: centered column ===== */
 form {
     display: flex;
-    flex-direction: column;                     
+    flex-direction: column;
     align-items: center;
-    gap: 12px;                                  
-    width: 280px;                               
+    gap: 12px;
+    width: 280px;
 }
 
-
+/* ===== Form title ===== */
 form h1 {
     font-size: 16px;
-    margin: 0 0 12px 0;                       
+    margin: 0 0 12px 0;
 }
 
-
+/* ===== Form paragraphs ===== */
 form p {
-    margin: 0;                                  
+    margin: 0;
 }
 
-h1 ~ a:hover {                                
+/* ===== Links after the title (GENERAL SIBLING SELECTOR) ===== */
+h1 ~ a:hover {
     text-decoration: underline;
 }
 
-/* ===== ПОЛЯ ВВОДА: прозрачные, только линия снизу ===== */
+/* ===== Inputs: transparent, bottom line only ===== */
 input {
-    width: 100%;                                
+    width: 100%;
     padding: 8px 0;
-    background: transparent;                  
-    border: none;                               
-    border-bottom: 1px solid white;             
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid white;
     color: white;
-    font: inherit;                             
+    font: inherit;                              /* use body font */
     letter-spacing: inherit;
 }
 
-/* ===== АКТИВНОЕ ПОЛЕ: когда пользователь печатает ===== */
+/* ===== Active input (PSEUDO-CLASS) ===== */
 input:focus {
-    outline: none;                              
-    border-bottom-color: gray;                  
+    outline: none;
+    border-bottom-color: gray;
 }
 
-/* ===== КНОПКА LOG IN: белая ===== */
+/* ===== Button ===== */
 button {
     width: 100%;
-    padding: 12px;                            
+    padding: 12px;
     background-color: white;
     color: black;
     border: none;
-    font: inherit;                              
+    font: inherit;
     letter-spacing: inherit;
-    text-transform: uppercase;                  
-    cursor: pointer;                            
+    text-transform: uppercase;
+    cursor: pointer;
 }
 
-/* ===== НАВЕДЕНИЕ НА КНОПКУ ===== */
+/* ===== Button hover ===== */
 button:hover {
     background-color: gray;
 }
 
-/* ===== ОТСТУП ПЕРЕД КНОПКОЙ) ===== */
-input + button {                               
-    margin-top: 12px;                           
+/* ===== Space before button (ADJACENT SIBLING SELECTOR) ===== */
+input + button {
+    margin-top: 12px;
 }
 
-/* ===== ПОДВАЛ: нижняя часть страницы ===== */
+/* ===== Footer ===== */
 footer {
-    padding: 16px 36px;                        
+    padding: 16px 36px;
+    text-align: center;
+}
+
+/* ===== addPost: textarea (same look as inputs) ===== */
+textarea {
+    width: 100%;
+    box-sizing: border-box;                     /* padding inside width */
+    padding: 8px;
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+    font: inherit;                              /* override browser font */
+    letter-spacing: inherit;
+    resize: vertical;                           /* only vertical resizing */
+    text-transform: inherit;                    /* override browser default */
+}
+
+/* ===== Placeholder text (PSEUDO-ELEMENT) ===== */
+textarea::placeholder {
+    color: gray;
+}
+
+/* ===== Active textarea ===== */
+textarea:focus {
+    outline: none;
+    border-color: gray;
+}
+
+/* ===== File input: remove underline from input rule ===== */
+input[type="file"] {
+    border-bottom: none;
+}
+
+/* ===== "Choose File" button (PSEUDO-ELEMENT) ===== */
+input[type="file"]::file-selector-button {
+    background: white;
+    color: black;
+    border: none;
+    padding: 8px 12px;
+    margin-right: 12px;
+    font: inherit;
+    text-transform: uppercase;
+    cursor: pointer;
+    letter-spacing: inherit;
 }
