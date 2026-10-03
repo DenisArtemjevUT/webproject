@@ -1,0 +1,297 @@
+/* ==================== BASE ==================== */
+
+body {
+    margin: 0;
+    background-color: black;
+    color: white;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+
+/* ==================== HEADER ==================== */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    height: 50px;
+    padding: 0 20px;
+    margin-left: 10px;
+    margin-bottom: 20px;
+
+    border-radius: 10px;
+}
+
+/* CHILD SELECTOR */
+header>img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* DESCENDANT SELECTOR */
+nav a {
+    padding: 8px 12px;
+}
+
+/* PSEUDO-CLASS */
+nav a:hover {
+    background: linear-gradient(to right,
+            rgb(80, 118, 149),
+            #111111);
+    color: black;
+}
+
+
+/* ==================== MAIN ==================== */
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 40px 16px;
+    flex: 1;
+}
+
+
+/* ==================== FORM ==================== */
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 12px;
+    width: 280px;
+}
+
+form h1 {
+    font-size: 16px;
+    margin: 0 0 12px 0;
+}
+
+form p {
+    margin: 0;
+}
+
+/* GENERAL SIBLING SELECTOR */
+h1~a:hover {
+    text-decoration: underline;
+}
+
+
+/* ==================== INPUT ==================== */
+
+input {
+    width: 100%;
+    padding: 8px 0;
+
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid white;
+
+    color: white;
+    font: inherit;
+    letter-spacing: inherit;
+}
+
+input:focus {
+    outline: none;
+    border-bottom-color: white;
+}
+
+input::placeholder {
+    color: white;
+}
+
+
+/* ==================== BUTTON ==================== */
+
+button {
+    width: 100%;
+    padding: 12px;
+
+    background-color: white;
+    color: black;
+    border: none;
+
+    font: inherit;
+    letter-spacing: inherit;
+    text-transform: uppercase;
+
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: white;
+}
+
+/* ADJACENT SIBLING SELECTOR */
+input+button {
+    margin-top: 12px;
+}
+
+
+/* ==================== ADD POST ==================== */
+
+textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 8px;
+
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+
+    font: inherit;
+    letter-spacing: inherit;
+    text-transform: inherit;
+
+    resize: vertical;
+}
+
+/* PSEUDO-ELEMENT */
+textarea::placeholder {
+    color: white;
+    opacity: 1;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: white;
+}
+
+input[type="file"] {
+    border-bottom: none;
+}
+
+input[type="file"]::file-selector-button {
+    background: white;
+    color: black;
+    border: none;
+
+    padding: 8px 12px;
+    margin-right: 12px;
+
+    font: inherit;
+    text-transform: uppercase;
+    letter-spacing: inherit;
+
+    cursor: pointer;
+}
+
+
+/* ==================== FRAME ==================== */
+
+.frame form {
+    width: 300px;
+    padding: 30px;
+
+    background: linear-gradient(to bottom,
+            rgb(80, 118, 149),
+            rgb(139, 138, 138));
+
+    border-radius: 15px;
+}
+
+
+/* ==================== POSTS ==================== */
+
+/* ==================== POSTS ==================== */
+
+.post {
+    width: 500px;
+    max-width: 100%;
+    padding: 30px;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background: linear-gradient(to bottom,
+            rgb(80, 118, 149),
+            rgb(139, 138, 138));
+
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+
+/* Avatar and date above the photo */
+.post-header {
+    width: 360px;
+    max-width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 5px;
+}
+
+
+/* Small profile image */
+.avatar {
+    width: 25px;
+    height: 25px;
+
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+
+/* Date */
+.date {
+    margin: 0;
+}
+
+
+/* Main post image */
+.post-image {
+    width: 360px;
+    max-width: 100%;
+    height: auto;
+
+    display: block;
+}
+
+
+/* Place name */
+.place {
+    width: 360px;
+    max-width: 100%;
+    margin: 10px 0 0 0;
+}
+
+
+/* Like */
+.like {
+    width: 360px;
+    max-width: 100%;
+    margin: 5px 0 0 0;
+}
+
+
+/* ==================== FOOTER ==================== */
+
+footer {
+    padding: 16px 36px;
+    text-align: center;
+}
