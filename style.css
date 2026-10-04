@@ -1,89 +1,83 @@
 /* ==================== BASE ==================== */
-
 body {
-    margin: 0;
+    margin: 0; /* removes default space around the page */
     background-color: black;
     color: white;
     font-family: Helvetica, Arial, sans-serif;
     font-size: 12px;
     text-transform: uppercase;
     letter-spacing: 1px;
-    min-height: 100vh;
+    min-height: 100vh; /* minimum height is the full screen */
 
-    display: flex;
-    flex-direction: column;
+    display: flex; /* allows positioning child elements with Flexbox */
+    flex-direction: column; /* places child elements vertically */
 }
 
 a {
     color: white;
-    text-decoration: none;
+    text-decoration: none; /* removes link underline */
 }
 
 
 /* ==================== HEADER ==================== */
-
 header {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: space-between; /* puts child elements at opposite sides */
+    align-items: center; /* centers child elements vertically */
 
     height: 50px;
-    padding: 0 20px;
+    padding: 0 20px; /* 0 top/bottom, 20px left/right */
     margin-left: 10px;
-    margin-bottom: 20px;
-
-    border-radius: 10px;
 }
 
 /* CHILD SELECTOR */
-header> a > img {
+header > img { /* selects only an img directly inside header */
     width: 40px;
     height: 40px;
-    border-radius: 50%;
-    object-fit: cover;
+    object-fit: cover; /* fills the area without stretching the image */
 }
 
 /* DESCENDANT SELECTOR */
-nav a {
+nav a { /* selects all links inside nav */
     padding: 8px 12px;
 }
 
 /* PSEUDO-CLASS */
-nav a:hover {
-    background: linear-gradient(to right,
-            rgb(80, 118, 149),
-            #111111);
+nav a:hover { /* applies when the mouse is over a navigation link */
+    background: linear-gradient(
+        to right,
+        rgb(80, 118, 149),
+        #111111
+    );
     color: black;
 }
 
 
 /* ==================== MAIN ==================== */
-
 main {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    align-items: center; /* centers elements horizontally because direction is column */
+    justify-content: center; /* centers elements vertically */
 
     padding: 40px 16px;
-    flex: 1;
+    flex: 1; /* takes the remaining available space */
 }
 
 
 /* ==================== FORM ==================== */
-
 form {
     display: flex;
     flex-direction: column;
     align-items: center;
 
-    gap: 12px;
+    gap: 12px; /* space between child elements */
     width: 280px;
 }
 
 form h1 {
     font-size: 16px;
-    margin: 0 0 12px 0;
+    margin: 0 0 12px 0; /* only 12px margin at the bottom */
 }
 
 form p {
@@ -91,38 +85,36 @@ form p {
 }
 
 /* GENERAL SIBLING SELECTOR */
-h1~a:hover {
+h1 ~ a:hover { /* selects hovered links after h1 with the same parent */
     text-decoration: underline;
 }
 
 
 /* ==================== INPUT ==================== */
-
 input {
     width: 100%;
     padding: 8px 0;
 
-    background: transparent;
+    background: transparent; /* shows the background behind the input */
     border: none;
     border-bottom: 1px solid white;
 
     color: white;
-    font: inherit;
+    font: inherit; /* uses the font settings of the parent element */
     letter-spacing: inherit;
 }
 
-input:focus {
+input:focus { /* applies when the user clicks into the input */
     outline: none;
     border-bottom-color: white;
 }
 
-input::placeholder {
+input::placeholder { /* styles the placeholder text */
     color: white;
 }
 
 
 /* ==================== BUTTON ==================== */
-
 button {
     width: 100%;
     padding: 12px;
@@ -135,7 +127,7 @@ button {
     letter-spacing: inherit;
     text-transform: uppercase;
 
-    cursor: pointer;
+    cursor: pointer; /* shows hand cursor when hovering */
 }
 
 button:hover {
@@ -143,16 +135,15 @@ button:hover {
 }
 
 /* ADJACENT SIBLING SELECTOR */
-input+button {
+input + button { /* selects a button directly after an input */
     margin-top: 12px;
 }
 
 
 /* ==================== ADD POST ==================== */
-
 textarea {
     width: 100%;
-    box-sizing: border-box;
+    box-sizing: border-box; /* keeps padding and border inside the set width */
     padding: 8px;
 
     background: transparent;
@@ -163,13 +154,13 @@ textarea {
     letter-spacing: inherit;
     text-transform: inherit;
 
-    resize: vertical;
+    resize: vertical; /* allows resizing only vertically */
 }
 
 /* PSEUDO-ELEMENT */
-textarea::placeholder {
+textarea::placeholder { /* styles the placeholder text */
     color: white;
-    opacity: 1;
+    opacity: 1; /* makes placeholder fully visible */
 }
 
 textarea:focus {
@@ -177,11 +168,11 @@ textarea:focus {
     border-color: white;
 }
 
-input[type="file"] {
+input[type="file"] { /* selects only file inputs */
     border-bottom: none;
 }
 
-input[type="file"]::file-selector-button {
+input[type="file"]::file-selector-button { /* styles the Choose File button */
     background: white;
     color: black;
     border: none;
@@ -198,26 +189,24 @@ input[type="file"]::file-selector-button {
 
 
 /* ==================== FRAME ==================== */
-
-.frame form {
+.frame form { /* selects a form inside an element with class frame */
     width: 300px;
     padding: 30px;
 
-    background: linear-gradient(to bottom,
-            rgb(80, 118, 149),
-            rgb(139, 138, 138));
+    background: linear-gradient(
+        to bottom,
+        rgb(80, 118, 149),
+        rgb(139, 138, 138)
+    );
 
-    border-radius: 15px;
+    border-radius: 15px; /* rounds the corners */
 }
 
 
 /* ==================== POSTS ==================== */
-
-/* ==================== POSTS ==================== */
-
 .post {
     width: 500px;
-    max-width: 100%;
+    max-width: 100%; /* prevents the post from being wider than the screen */
     padding: 30px;
     box-sizing: border-box;
 
@@ -225,9 +214,11 @@ input[type="file"]::file-selector-button {
     flex-direction: column;
     align-items: center;
 
-    background: linear-gradient(to bottom,
-            rgb(80, 118, 149),
-            rgb(139, 138, 138));
+    background: linear-gradient(
+        to bottom,
+        rgb(80, 118, 149),
+        rgb(139, 138, 138)
+    );
 
     border-radius: 10px;
     margin-bottom: 20px;
@@ -240,7 +231,7 @@ input[type="file"]::file-selector-button {
     max-width: 100%;
 
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* avatar left, date right */
     align-items: center;
 
     margin-bottom: 5px;
@@ -266,8 +257,8 @@ input[type="file"]::file-selector-button {
 /* Main post image */
 .post-image {
     width: 360px;
-    max-width: 100%;
-    height: auto;
+    max-width: 100%; /* makes the image fit on smaller screens */
+    height: auto; /* keeps the original image proportions */
 
     display: block;
 }
@@ -277,7 +268,7 @@ input[type="file"]::file-selector-button {
 .place {
     width: 360px;
     max-width: 100%;
-    margin: 10px 0 0 0;
+    margin: 10px 0 0 0; /* 10px only above the text */
 }
 
 
@@ -285,12 +276,11 @@ input[type="file"]::file-selector-button {
 .like {
     width: 360px;
     max-width: 100%;
-    margin: 5px 0 0 0;
+    margin: 5px 0 0 0; /* 5px only above the like */
 }
 
 
 /* ==================== FOOTER ==================== */
-
 footer {
     padding: 16px 36px;
     text-align: center;
