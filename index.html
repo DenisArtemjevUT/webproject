@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 
 <body>
@@ -15,7 +16,15 @@
             <a href="index.html">Home</a>
             <a href="addPost.html">Add Post</a>
         </nav>
-        <a href="login.html"><img src="images/avatarw.png" alt="Profile"></a>
+        <div class="profile">
+           <button type="button"  id="profBtn"><img src="images/avatarw.png" alt="Profile"></button>  
+           <div class="info-box" id="infBox" hidden>
+            <p>Denis</p>
+            <p>justfortest@mgail.com</p>
+            <a href="login.html">Logout</a>
+           </div>
+        </div>
+       
     </header>
 
     <main>
