@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>PostIt-Login</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 
 
 </head>
@@ -23,7 +24,14 @@
 
 
         </nav>
-            <a href="login.html"><img src="images/avatarw.png" alt="Profile"></a> <!--Profile image--> 
+        <div class="profile">
+           <button type="button"  id="profBtn"><img src="images/avatarw.png" alt="Profile"></button>
+           <div class="info-box" id="infBox" hidden>
+            <p>Denis</p>
+            <p>justfortest@mgail.com</p>
+            <a href="login.html">Logout</a>
+        </div>
+        </div>
 
     </header>
 

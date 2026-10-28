@@ -1,0 +1,84 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "author": { "name": "Marina Gorelikova", "avatar": "images/avatarw.png" },
+      "createTime": "2026-09-27T19:42:00+03:00",
+      "text": "Tartu päikeseloeng",
+      "image": { "src": "photo1.jpg", "alt": "Päikeseloojang Tartus" },
+      "likes": 12
+    },
+    {
+      "id": 2,
+      "author": { "name": "Denis Artemjev", "avatar": "images/avatarb.png" },
+      "createTime": "2026-09-19T13:05:00+03:00",
+      "text": "Tartu Raekojaplatsi purskkaev",
+      "image": { "src": "photo2.jpg", "alt": "Purskkaev Tartu Raekoja platsil" },
+      "likes": 8
+    },
+    {
+      "id": 3,
+      "author": { "name": "Marina Gorelikova", "avatar": "images/avatarw.png" },
+      "createTime": "2026-08-23T17:30:00+03:00",
+      "text": "Narva-Jõesuu meri",
+      "image": { "src": "photo3.jpg", "alt": "Meri Narva-Jõesuus" },
+      "likes": 21
+    },
+    {
+      "id": 4,
+      "author": { "name": "Anna Tamm", "avatar": "images/avatarw.png" },
+      "createTime": "2026-08-19T10:15:00+03:00",
+      "text": "Narva mets",
+      "image": { "src": "photo4.jpg", "alt": "Mets Narva lähedal" },
+      "likes": 5
+    },
+    {
+      "id": 5,
+      "author": { "name": "Denis Artemjev", "avatar": "images/avatarb.png" },
+      "createTime": "2026-06-27T16:48:00+03:00",
+      "text": "Täna käisin Tallinnas ja ostsin endale uut autot!",
+      "image": null,
+      "likes": 17
+    },
+    {
+      "id": 6,
+      "author": { "name": "Karl Saar", "avatar": "images/avatarb.png" },
+      "createTime": "2026-06-12T09:20:00+03:00",
+      "text": "Kas keegi teab, mis ruumis tänane praktikum toimub?",
+      "image": null,
+      "likes": 2
+    },
+    {
+      "id": 7,
+      "author": { "name": "Anna Tamm", "avatar": "images/avatarw.png" },
+      "createTime": "2026-05-30T21:10:00+03:00",
+      "text": "Suveöö Emajõe ääres",
+      "image": { "src": "photo5.jpg", "alt": "Õhtune vaade Emajõele" },
+      "likes": 14
+    },
+    {
+      "id": 8,
+      "author": { "name": "Marina Gorelikova", "avatar": "images/avatarw.png" },
+      "createTime": "2026-05-18T14:00:00+03:00",
+      "text": "Eksamid on lõpuks läbi! Nüüd saab puhata.",
+      "image": null,
+      "likes": 25
+    },
+    {
+      "id": 9,
+      "author": { "name": "Karl Saar", "avatar": "images/avatarb.png" },
+      "createTime": "2026-04-03T11:35:00+03:00",
+      "text": "Otsin tiimikaaslast veebirakenduste projektiks. Kirjuta mulle!",
+      "image": null,
+      "likes": 3
+    },
+    {
+      "id": 10,
+      "author": { "name": "Denis Artemjev", "avatar": "images/avatarb.png" },
+      "createTime": "2026-03-21T08:50:00+02:00",
+      "text": "Kevad on Tartusse jõudnud, esimene päikeseline hommik.",
+      "image": null,
+      "likes": 9
+    }
+  ]
+}
