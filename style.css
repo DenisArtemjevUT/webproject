@@ -40,7 +40,7 @@ header > a > img { /* selects only an img directly inside header */
 
 /* DESCENDANT SELECTOR */
 nav a { /* selects all links inside nav */
-    padding: 8px 12px;
+    padding: 10px 12px;
 }
 
 /* PSEUDO-CLASS */
@@ -61,7 +61,7 @@ main {
     align-items: center; /* centers elements horizontally because direction is column */
     justify-content: center; /* centers elements vertically */
 
-    padding: 40px 16px;
+    padding: 50px 16px;
     flex: 1; /* takes the remaining available space */
 }
 
