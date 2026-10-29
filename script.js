@@ -15,7 +15,7 @@ profileButton.addEventListener("click", function () {
 
 async function loadPosts() {
     const response = await fetch("./posts.json")
-    /* const response = await fetch("https://api.npoint.io/8c32942fe1fd125ff4ac") */
+    /* const response = await fetch("https://api.npoint.io/d90bb4124c3869ba8395") */
     const data = await response.json()
     const posts = data.posts
     const postsContainer = document.getElementById("posts");
@@ -36,7 +36,7 @@ async function loadPosts() {
         avatar.className = "avatar"
 
         const like = document.createElement("p")
-        like.textContent = post.likes
+        like.textContent = "👍" + post.likes
         like.className = "like"
 
         const date = document.createElement("p")
